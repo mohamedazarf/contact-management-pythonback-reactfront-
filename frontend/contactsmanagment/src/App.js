@@ -20,6 +20,7 @@ fetchContacts();
   const closeModal=()=>{
     setIsModalOpen(false);
     setCurrentContact({})
+    console.log('%cclosed','color:blue; font-size:40px')
   }
   const openModal=()=>{
     if(!isModalOpen) setIsModalOpen(true);
@@ -42,10 +43,10 @@ fetchContacts();
 )}
 <button onClick={openModal}>create new contact</button>
 {isModalOpen && <div className="modal">
-        <div className="modal-content">
-          <span className="close" onClick={closeModal}>&times;</span>
-          <ContactForm  existingContact={currentContact} updateCallback={onUpdate}/>
-        </div>
+        
+          {/* <span className="close" onClick={closeModal}>&times;</span> */}
+          <ContactForm  existingContact={currentContact} updateCallback={onUpdate} closeModal={onUpdate} fetchNewData={fetchContacts} />
+    
       </div>
       }
   </> 
