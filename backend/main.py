@@ -8,12 +8,12 @@ def index():
 def get_contacts():
     contacts = Contact.query.all()
     json_contacts=list(map(lambda x:x.to_json(),contacts))
-    return jsonify({'conatcts': json_contacts})
+    return jsonify({'contacts': json_contacts})
 @app.route('/create_contact', methods=['POST'])
 def create_contact():
-    first_name = request.json.get['firstName']
-    last_name = request.json.get['lastName']
-    email=request.json.get['email']
+    first_name = request.json.get('firstName')
+    last_name = request.json.get('lastName')
+    email=request.json.get('email')
     if not first_name or not last_name or not email:
         return jsonify({'message': 'All fields are required'}), 400
     new_contact = Contact(first_name=first_name, last_name=last_name, email=email)
@@ -24,7 +24,7 @@ def create_contact():
         return jsonify({'message': str(e)}), 400
     return jsonify({"message":"contact created successfully"})
 
-@app.route('/update_contact/<int:contact_id>', methods=['PUT'])
+@app.route('/update_contact/<int:contact_id>', methods=['PUT', 'PATCH'])
 def update_contact(contact_id):
     contact = Contact.query.get(contact_id)
     if not contact:
