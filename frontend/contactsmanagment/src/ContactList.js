@@ -14,14 +14,15 @@ const ContactList =({contacts,updateContact,updateCallback})=>{
         alert(error)
     }
 }
-    return <div>
-<h2>contacts</h2>
+const style={marginTop:'100px'}
+    return <div style={style}>
+<h2 className="tabletitle">contacts</h2>
 <table>
 <thead>
 <tr>
   <th style={{ textAlign: 'center' }}>id</th>
   <th style={{ textAlign: 'center' }}>first name</th>
-  <th style={{ textAlign: 'center' }}>ln</th>
+  <th style={{ textAlign: 'center' }}>last name</th>
   <th style={{ textAlign: 'center' }}>email</th>
   <th style={{ textAlign: 'center' }}>actions</th>
 </tr>
