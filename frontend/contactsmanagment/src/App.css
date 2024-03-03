@@ -46,3 +46,11 @@ table th,td{text-align: center;}
 .tabletitle{
   background-color:aqua; width:100%; text-align: center;  }
 .create{position:absolute; left: 50%; transform: translateX(-50%); padding:10px 5px;}
+.paginator{display: flex; background-color: bisque; justify-content: center;}
+.pages{display: flex; justify-content: center; align-items: center; background-color: aqua; width:50%;}
+  .pages button{ margin-right: 5px; transition: transform 0.3s ease; padding: 10px;  }
+  .pages button.active {
+    transform: scale(1.1); /* Échelle 1.5 pour le bouton actif */
+  }
+
+  .table{ width:600px; text-align: center; height:251.028px;}

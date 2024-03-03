@@ -15,7 +15,7 @@ const ContactList =({contacts,updateContact,updateCallback})=>{
     }
 }
 const style={marginTop:'100px'}
-    return <div style={style}>
+    return <div style={style} className="table">
 <h2 className="tabletitle">contacts</h2>
 <table>
 <thead>
